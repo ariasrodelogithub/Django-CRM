@@ -7,6 +7,7 @@
                     <table class="table table table-striped table table-hover table-responsive table table-bordered border-dark">
                         <thead class="table-dark">
                             <tr>
+                            <th scope="col">#</th>
                             <th scope="col">ID</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
@@ -21,7 +22,7 @@
                         <tbody>
                             {% for record  in records %}
                             <tr>
-                                <th><a href="{% url 'customer' record.id  %}">Detalle</a></th>
+                                <td><a href="{% url 'customer' record.id  %}">{{ forloop.counter }}</a></td>
                                 <td>{{ record.first_name}}</td>
                                 <td>{{ record.last_name}}</td>
                                 <td>{{ record.email}}</td>
